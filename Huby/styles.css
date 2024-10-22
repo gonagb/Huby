@@ -60,8 +60,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--neutral-800);
-    background-color: var(--neutral-800);
+    color: var(--neutral-0);
+    background-color: var(--neutral-900);
 }
 
 /* Container Styles */
@@ -77,9 +77,9 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #ffffff;
+    background-color: var(--neutral-800);
     border-bottom: 1px solid #e5e5e5;
-    padding: 10px 0; /* Añadido espacio extra para evitar que el contenido se sienta comprimido */
+    padding: 10px 0; 
 }
 
 header .logo h1 {
@@ -95,22 +95,22 @@ header nav ul {
 
 header nav ul li a {
     text-decoration: none;
-    color: #000;
-    font-weight: 600;
+    color: var(--neutral-50);
+    font-weight: bold;
     transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #777; /* Efecto hover para los enlaces del menú */
+    color: var(--neutral-400);
 }
 
 header .login a {
     text-decoration: none;
     background-color: var(--neutral-800);
-    color: #fff;
+    color: var(--neutral-0);
     padding: 10px 10px;
     border-radius: 5px;
-    font-weight: 500;
+    font-weight: bold;
     transition: background-color 0.3s;
 }
 
@@ -122,7 +122,7 @@ header .login a:hover {
 .hero-section {
     position: relative;
     text-align: center;
-    color: white;
+    color: var(--neutral-0);
     height: 500px;
 }
 
@@ -146,7 +146,7 @@ header .login a:hover {
 .overlay h2 {
     font-size: 32px;
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: bolder;
 }
 
 .search-box {
@@ -167,13 +167,13 @@ header .login a:hover {
 }
 
 .search-box input:focus {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Añade un pequeño sombreado al campo de búsqueda cuando está enfocado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
 .search-box button {
     padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--neutral-1);
+    color: var(--neutral-0);
     border: none;
     border-radius: 30px;
     font-size: 18px;
@@ -183,7 +183,7 @@ header .login a:hover {
 }
 
 .search-box button:hover {
-    background-color: #333; /* Efecto hover para el botón */
+    background-color: var(--neutral-400); /* Efecto hover para el botón */
 }
 
 .search-box button i {
@@ -191,9 +191,21 @@ header .login a:hover {
 }
 
 .search-box input::placeholder {
-    color: #999;
+    color: var(--neutral-100);
 }
 
+/* Maps Iframe*/
+
+.maps-iframe{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    
+}
 /* Forms Styles */
 
 .form-container {
@@ -211,7 +223,7 @@ header .login a:hover {
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: bolder;
     color: #333;
 }
 
@@ -265,11 +277,11 @@ button[type="submit"]:hover {
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
-    color: #777;
+    color: var(--neutral-0);
 }
 
 .login-link, .register-link a {
-    color: #000;
+    color: var(--neutral-900);
     text-decoration: none;
 }
 
@@ -293,7 +305,7 @@ button[type="submit"]:hover {
     text-align: center;
     margin-bottom: 20px;
     font-size: 28px;
-    font-weight: 700;
+    font-weight: bolder;
     color: #333;
 }
 
@@ -322,7 +334,7 @@ button[type="submit"]:hover {
 
 /* Footer Styles */
 footer {
-    background-color: #ffffff;
+    background-color: var(--neutral-800);
     padding: 40px 0;
     border-top: 1px solid #e5e5e5;
 }
@@ -351,11 +363,11 @@ footer nav.footer-nav ul {
 
 footer nav.footer-nav ul li a {
     text-decoration: none;
-    color: #000;
+    color: var(--neutral-50);
     font-weight: 600;
     transition: color 0.3s;
 }
 
 footer nav.footer-nav ul li a:hover {
-    color: #777; /* Efecto hover para los enlaces del footer */
+    color: #777; 
 }
