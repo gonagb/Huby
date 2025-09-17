@@ -2,10 +2,10 @@
   "name": "huby-coworking-finder",
   "version": "1.0.0",
   "description": "MVP de buscador de coworkings en España comenzando por Valencia",
-  "main": "server/index.js",
+  "main": "dev-server.js",
   "scripts": {
-    "dev": "nodemon server/index.js",
-    "start": "node server/index.js",
+    "dev": "nodemon dev-server.js",
+    "start": "node dev-server.js",
     "build": "npm run copy-assets",
     "copy-assets": "node scripts/copy-assets.js",
     "test": "jest",

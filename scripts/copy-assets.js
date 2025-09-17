@@ -10,13 +10,13 @@ function copyAssets() {
   function copyRecursive(src, dest) {
     try {
       const stats = fs.statSync(src);
-      
+
       if (stats.isDirectory()) {
         // Crear directorio si no existe
         if (!fs.existsSync(dest)) {
           fs.mkdirSync(dest, { recursive: true });
         }
-        
+
         // Copiar contenido del directorio
         const files = fs.readdirSync(src);
         files.forEach(file => {

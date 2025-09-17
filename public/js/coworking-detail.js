@@ -7,60 +7,61 @@ const coworkingDetail = document.getElementById('coworkingDetail');
 const errorMessage = document.getElementById('errorMessage');
 
 // Inicializar la página
-document.addEventListener('DOMContentLoaded', function() {
-    loadCoworkingDetail();
+document.addEventListener('DOMContentLoaded', function () {
+  loadCoworkingDetail();
 });
 
 async function loadCoworkingDetail() {
-    try {
-        // Obtener el ID del coworking desde localStorage o URL
-        const coworkingId = getCoworkingId();
-        
-        if (!coworkingId) {
-            showError();
-            return;
-        }
+  try {
+    // Obtener el ID del coworking desde localStorage o URL
+    const coworkingId = getCoworkingId();
 
-        const response = await fetch(`${API_BASE_URL}/coworkings/${coworkingId}`);
-        const data = await response.json();
-
-        if (data.success) {
-            renderCoworkingDetail(data.data);
-        } else {
-            showError();
-        }
-    } catch (error) {
-        console.error('Error cargando detalles del coworking:', error);
-        showError();
+    if (!coworkingId) {
+      showError();
+      return;
     }
+
+    const response = await fetch(`${API_BASE_URL}/coworkings/${coworkingId}`);
+    const data = await response.json();
+
+    if (data.success) {
+      renderCoworkingDetail(data.data);
+    } else {
+      showError();
+    }
+  } catch (error) {
+    console.error('Error cargando detalles del coworking:', error);
+    showError();
+  }
 }
 
 function getCoworkingId() {
-    // Primero intentar desde localStorage (desde la búsqueda)
-    let coworkingId = localStorage.getItem('selectedCoworkingId');
-    
-    // Si no está en localStorage, intentar desde la URL
-    if (!coworkingId) {
-        const urlParams = new URLSearchParams(window.location.search);
-        coworkingId = urlParams.get('id');
-    }
-    
-    return coworkingId;
+  // Primero intentar desde localStorage (desde la búsqueda)
+  let coworkingId = localStorage.getItem('selectedCoworkingId');
+
+  // Si no está en localStorage, intentar desde la URL
+  if (!coworkingId) {
+    const urlParams = new URLSearchParams(window.location.search);
+    coworkingId = urlParams.get('id');
+  }
+
+  return coworkingId;
 }
 
 function renderCoworkingDetail(coworking) {
-    loadingSpinner.style.display = 'none';
-    coworkingDetail.style.display = 'block';
-    
-    // Actualizar el título de la página
-    document.title = `${coworking.name} - Huby`;
-    
-    const featuredBadge = coworking.featured ? 
-        '<span class="featured-badge-large">⭐ Destacado</span>' : '';
-    
-    const rating = generateStars(coworking.rating);
-    
-    coworkingDetail.innerHTML = `
+  loadingSpinner.style.display = 'none';
+  coworkingDetail.style.display = 'block';
+
+  // Actualizar el título de la página
+  document.title = `${coworking.name} - Huby`;
+
+  const featuredBadge = coworking.featured
+    ? '<span class="featured-badge-large">⭐ Destacado</span>'
+    : '';
+
+  const rating = generateStars(coworking.rating);
+
+  coworkingDetail.innerHTML = `
         <!-- Hero Section -->
         <section class="detail-hero">
             <div class="hero-image">
@@ -106,12 +107,16 @@ function renderCoworkingDetail(coworking) {
                         <div class="section-card">
                             <h2>Servicios y comodidades</h2>
                             <div class="amenities-grid">
-                                ${coworking.amenities.map(amenity => `
+                                ${coworking.amenities
+    .map(
+      amenity => `
                                     <div class="amenity-item">
                                         <i class="fa fa-check-circle"></i>
                                         <span>${amenity}</span>
                                     </div>
-                                `).join('')}
+                                `
+    )
+    .join('')}
                             </div>
                         </div>
 
@@ -135,12 +140,16 @@ function renderCoworkingDetail(coworking) {
                                         <i class="fa fa-envelope"></i>
                                         <a href="mailto:${coworking.email}">${coworking.email}</a>
                                     </div>
-                                    ${coworking.website ? `
+                                    ${
+  coworking.website
+    ? `
                                         <div class="contact-item">
                                             <i class="fa fa-globe"></i>
                                             <a href="${coworking.website}" target="_blank">Sitio web</a>
                                         </div>
-                                    ` : ''}
+                                    `
+    : ''
+}
                                 </div>
                             </div>
                             <!-- Placeholder para mapa -->
@@ -214,77 +223,76 @@ function renderCoworkingDetail(coworking) {
 }
 
 function renderGallery(images) {
-    if (images.length <= 1) return '';
-    
-    return `
+  if (images.length <= 1) return '';
+
+  return `
         <div class="section-card">
             <h2>Galería</h2>
             <div class="image-gallery">
-                ${images.map((image, index) => `
+                ${images
+    .map(
+      (image, index) => `
                     <div class="gallery-item" onclick="openImageModal('${image}', ${index})">
                         <img src="${image}" alt="Imagen ${index + 1}" loading="lazy">
                     </div>
-                `).join('')}
+                `
+    )
+    .join('')}
             </div>
         </div>
     `;
 }
 
 function renderOpeningHours(hours) {
-    const dayNames = {
-        monday: 'Lunes',
-        tuesday: 'Martes', 
-        wednesday: 'Miércoles',
-        thursday: 'Jueves',
-        friday: 'Viernes',
-        saturday: 'Sábado',
-        sunday: 'Domingo'
-    };
-    
-    return Object.entries(hours).map(([day, time]) => `
+  const dayNames = {
+    monday: 'Lunes',
+    tuesday: 'Martes',
+    wednesday: 'Miércoles',
+    thursday: 'Jueves',
+    friday: 'Viernes',
+    saturday: 'Sábado',
+    sunday: 'Domingo',
+  };
+
+  return Object.entries(hours)
+    .map(
+      ([day, time]) => `
         <div class="hours-item">
             <span class="day">${dayNames[day]}:</span>
             <span class="time">${time}</span>
         </div>
-    `).join('');
+    `
+    )
+    .join('');
 }
 
 function generateStars(rating) {
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 !== 0;
-    let starsHtml = '';
-    
-    for (let i = 0; i < fullStars; i++) {
-        starsHtml += '<i class="fa fa-star"></i>';
-    }
-    
-    if (hasHalfStar) {
-        starsHtml += '<i class="fa fa-star-half-o"></i>';
-    }
-    
-    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-    for (let i = 0; i < emptyStars; i++) {
-        starsHtml += '<i class="fa fa-star-o"></i>';
-    }
-    
-    return `<div class="stars">${starsHtml}</div>`;
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+  let starsHtml = '';
+
+  for (let i = 0; i < fullStars; i++) {
+    starsHtml += '<i class="fa fa-star"></i>';
+  }
+
+  if (hasHalfStar) {
+    starsHtml += '<i class="fa fa-star-half-o"></i>';
+  }
+
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+  for (let i = 0; i < emptyStars; i++) {
+    starsHtml += '<i class="fa fa-star-o"></i>';
+  }
+
+  return `<div class="stars">${starsHtml}</div>`;
 }
 
 function showError() {
-    loadingSpinner.style.display = 'none';
-    errorMessage.style.display = 'block';
-}
-
-function showReservationModal() {
-    alert('Funcionalidad de reserva próximamente. Por favor, contacta directamente con el coworking.');
-}
-
-function openImageModal(imageSrc, index) {
-    // TODO: Implementar modal de galería de imágenes
-    window.open(imageSrc, '_blank');
+  loadingSpinner.style.display = 'none';
+  errorMessage.style.display = 'block';
 }
 
 // Limpiar localStorage al cargar la página
-window.addEventListener('beforeunload', function() {
-    localStorage.removeItem('selectedCoworkingId');
+window.addEventListener('beforeunload', function () {
+  localStorage.removeItem('selectedCoworkingId');
 });

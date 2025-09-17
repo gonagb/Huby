@@ -24,33 +24,34 @@ const coworkingsData = JSON.parse(
 router.get('/coworkings', (req, res) => {
   try {
     let filteredCoworkings = [...coworkingsData];
-    
+
     // Aplicar filtros
     const { search, city, maxPrice, amenity, featured, sort, limit, offset } = req.query;
 
     // Filtro por búsqueda de texto
     if (search) {
       const searchTerm = search.toLowerCase();
-      filteredCoworkings = filteredCoworkings.filter(coworking =>
-        coworking.name.toLowerCase().includes(searchTerm) ||
-        coworking.description.toLowerCase().includes(searchTerm) ||
-        coworking.shortDescription.toLowerCase().includes(searchTerm) ||
-        coworking.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+      filteredCoworkings = filteredCoworkings.filter(
+        coworking =>
+          coworking.name.toLowerCase().includes(searchTerm) ||
+          coworking.description.toLowerCase().includes(searchTerm) ||
+          coworking.shortDescription.toLowerCase().includes(searchTerm) ||
+          coworking.tags.some(tag => tag.toLowerCase().includes(searchTerm))
       );
     }
 
     // Filtro por ciudad
     if (city) {
-      filteredCoworkings = filteredCoworkings.filter(coworking =>
-        coworking.city.toLowerCase() === city.toLowerCase()
+      filteredCoworkings = filteredCoworkings.filter(
+        coworking => coworking.city.toLowerCase() === city.toLowerCase()
       );
     }
 
     // Filtro por precio máximo
     if (maxPrice) {
       const maxPriceNum = parseFloat(maxPrice);
-      filteredCoworkings = filteredCoworkings.filter(coworking =>
-        coworking.pricing.dayPass <= maxPriceNum
+      filteredCoworkings = filteredCoworkings.filter(
+        coworking => coworking.pricing.dayPass <= maxPriceNum
       );
     }
 
@@ -64,24 +65,24 @@ router.get('/coworkings', (req, res) => {
     // Filtro por destacados
     if (featured !== undefined) {
       const isFeatured = featured.toLowerCase() === 'true';
-      filteredCoworkings = filteredCoworkings.filter(coworking =>
-        coworking.featured === isFeatured
+      filteredCoworkings = filteredCoworkings.filter(
+        coworking => coworking.featured === isFeatured
       );
     }
 
     // Ordenamiento
     if (sort) {
       switch (sort.toLowerCase()) {
-        case 'price':
-          filteredCoworkings.sort((a, b) => a.pricing.dayPass - b.pricing.dayPass);
-          break;
-        case 'rating':
-          filteredCoworkings.sort((a, b) => b.rating - a.rating);
-          break;
-        case 'name':
-        default:
-          filteredCoworkings.sort((a, b) => a.name.localeCompare(b.name));
-          break;
+      case 'price':
+        filteredCoworkings.sort((a, b) => a.pricing.dayPass - b.pricing.dayPass);
+        break;
+      case 'rating':
+        filteredCoworkings.sort((a, b) => b.rating - a.rating);
+        break;
+      case 'name':
+      default:
+        filteredCoworkings.sort((a, b) => a.name.localeCompare(b.name));
+        break;
       }
     }
 
@@ -89,7 +90,7 @@ router.get('/coworkings', (req, res) => {
     const totalResults = filteredCoworkings.length;
     const offsetNum = parseInt(offset) || 0;
     const limitNum = parseInt(limit) || totalResults;
-    
+
     const paginatedResults = filteredCoworkings.slice(offsetNum, offsetNum + limitNum);
 
     // Respuesta con metadatos
@@ -100,7 +101,7 @@ router.get('/coworkings', (req, res) => {
         total: totalResults,
         offset: offsetNum,
         limit: limitNum,
-        hasMore: offsetNum + limitNum < totalResults
+        hasMore: offsetNum + limitNum < totalResults,
       },
       filters: {
         search,
@@ -108,15 +109,14 @@ router.get('/coworkings', (req, res) => {
         maxPrice,
         amenity,
         featured,
-        sort
-      }
+        sort,
+      },
     });
-
   } catch (error) {
     console.error('Error en GET /api/coworkings:', error);
     res.status(500).json({
       success: false,
-      message: 'Error interno del servidor'
+      message: 'Error interno del servidor',
     });
   }
 });
@@ -128,11 +128,11 @@ router.get('/coworkings', (req, res) => {
 router.get('/coworkings/:id', (req, res) => {
   try {
     const coworkingId = parseInt(req.params.id);
-    
+
     if (isNaN(coworkingId)) {
       return res.status(400).json({
         success: false,
-        message: 'ID de coworking inválido'
+        message: 'ID de coworking inválido',
       });
     }
 
@@ -141,20 +141,19 @@ router.get('/coworkings/:id', (req, res) => {
     if (!coworking) {
       return res.status(404).json({
         success: false,
-        message: 'Coworking no encontrado'
+        message: 'Coworking no encontrado',
       });
     }
 
     res.json({
       success: true,
-      data: coworking
+      data: coworking,
     });
-
   } catch (error) {
     console.error('Error en GET /api/coworkings/:id:', error);
     res.status(500).json({
       success: false,
-      message: 'Error interno del servidor'
+      message: 'Error interno del servidor',
     });
   }
 });
@@ -171,20 +170,19 @@ router.get('/coworkings/slug/:slug', (req, res) => {
     if (!coworking) {
       return res.status(404).json({
         success: false,
-        message: 'Coworking no encontrado'
+        message: 'Coworking no encontrado',
       });
     }
 
     res.json({
       success: true,
-      data: coworking
+      data: coworking,
     });
-
   } catch (error) {
     console.error('Error en GET /api/coworkings/slug/:slug:', error);
     res.status(500).json({
       success: false,
-      message: 'Error interno del servidor'
+      message: 'Error interno del servidor',
     });
   }
 });
@@ -196,17 +194,16 @@ router.get('/coworkings/slug/:slug', (req, res) => {
 router.get('/cities', (req, res) => {
   try {
     const cities = [...new Set(coworkingsData.map(c => c.city))].sort();
-    
+
     res.json({
       success: true,
-      data: cities
+      data: cities,
     });
-
   } catch (error) {
     console.error('Error en GET /api/cities:', error);
     res.status(500).json({
       success: false,
-      message: 'Error interno del servidor'
+      message: 'Error interno del servidor',
     });
   }
 });
@@ -219,17 +216,16 @@ router.get('/amenities', (req, res) => {
   try {
     const allAmenities = coworkingsData.flatMap(c => c.amenities);
     const uniqueAmenities = [...new Set(allAmenities)].sort();
-    
+
     res.json({
       success: true,
-      data: uniqueAmenities
+      data: uniqueAmenities,
     });
-
   } catch (error) {
     console.error('Error en GET /api/amenities:', error);
     res.status(500).json({
       success: false,
-      message: 'Error interno del servidor'
+      message: 'Error interno del servidor',
     });
   }
 });
