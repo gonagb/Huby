@@ -259,5 +259,364 @@
     "reviews": 28,
     "tags": ["centro", "historico", "nomadas", "acogedor"],
     "featured": false
+  },
+  {
+    "id": 6,
+    "name": "Impact Hub Madrid",
+    "slug": "impact-hub-madrid",
+    "description": "Red global de espacios de coworking enfocados en el emprendimiento social. Comunidad vibrante de innovadores comprometidos con generar un impacto positivo.",
+    "shortDescription": "Coworking de impacto social en Madrid",
+    "address": "Calle Alameda, 22, Madrid",
+    "city": "Madrid",
+    "postalCode": "28014",
+    "coordinates": {
+      "lat": 40.4168,
+      "lng": -3.7038
+    },
+    "phone": "+34 910 123 456",
+    "email": "madrid@impacthub.net",
+    "website": "https://madrid.impacthub.net",
+    "images": [
+      "/assets/spaces/wayco1.jpeg"
+    ],
+    "mainImage": "/assets/spaces/wayco1.jpeg",
+    "amenities": [
+      "WiFi de alta velocidad",
+      "Sala de eventos",
+      "Mentoring gratuito",
+      "Red global de contactos",
+      "Impresora/Scanner",
+      "Cocina equipada",
+      "Zona de presentaciones"
+    ],
+    "pricing": {
+      "dayPass": 28,
+      "weekPass": 110,
+      "monthlyHotDesk": 190,
+      "monthlyFixedDesk": 270,
+      "privateOffice": 480
+    },
+    "openingHours": {
+      "monday": "08:00-21:00",
+      "tuesday": "08:00-21:00",
+      "wednesday": "08:00-21:00",
+      "thursday": "08:00-21:00",
+      "friday": "08:00-21:00",
+      "saturday": "09:00-18:00",
+      "sunday": "Cerrado"
+    },
+    "capacity": 150,
+    "rating": 4.7,
+    "reviews": 112,
+    "tags": ["social", "impacto", "networking", "mentoring"],
+    "featured": true
+  },
+  {
+    "id": 7,
+    "name": "La Nave Madrid",
+    "slug": "la-nave-madrid",
+    "description": "Espacio de innovación y emprendimiento del Ayuntamiento de Madrid. Un ecosistema completo para startups y empresas tecnológicas con instalaciones de última generación.",
+    "shortDescription": "Hub de innovación tecnológica en Madrid",
+    "address": "Calle Cifuentes, 5, Madrid",
+    "city": "Madrid",
+    "postalCode": "28021",
+    "coordinates": {
+      "lat": 40.3947,
+      "lng": -3.6896
+    },
+    "phone": "+34 915 234 567",
+    "email": "info@lanavemadrid.com",
+    "website": "https://lanavemadrid.com",
+    "images": [
+      "/assets/spaces/wayco2.jpeg"
+    ],
+    "mainImage": "/assets/spaces/wayco2.jpeg",
+    "amenities": [
+      "Internet de fibra óptica",
+      "Fab Lab equipado",
+      "Aulas de formación",
+      "Auditorio",
+      "Parking gratuito",
+      "Cafetería",
+      "Jardín interior",
+      "Zona de prototipado"
+    ],
+    "pricing": {
+      "dayPass": 15,
+      "weekPass": 60,
+      "monthlyHotDesk": 120,
+      "monthlyFixedDesk": 180,
+      "privateOffice": 350
+    },
+    "openingHours": {
+      "monday": "08:00-20:00",
+      "tuesday": "08:00-20:00",
+      "wednesday": "08:00-20:00",
+      "thursday": "08:00-20:00",
+      "friday": "08:00-20:00",
+      "saturday": "09:00-15:00",
+      "sunday": "Cerrado"
+    },
+    "capacity": 200,
+    "rating": 4.5,
+    "reviews": 87,
+    "tags": ["tecnologia", "startups", "publico", "fabricacion"],
+    "featured": false
+  },
+  {
+    "id": 8,
+    "name": "Utopicus Madrid",
+    "slug": "utopicus-madrid",
+    "description": "Cadena española de coworkings premium con múltiples ubicaciones en Madrid. Diseño elegante y servicios de alta calidad para profesionales exigentes.",
+    "shortDescription": "Coworking premium en el corazón de Madrid",
+    "address": "Gran Vía, 28, Madrid",
+    "city": "Madrid",
+    "postalCode": "28013",
+    "coordinates": {
+      "lat": 40.4200,
+      "lng": -3.7030
+    },
+    "phone": "+34 912 345 678",
+    "email": "granvia@utopicus.es",
+    "website": "https://utopicus.es",
+    "images": [
+      "/assets/spaces/wayco3.jpeg"
+    ],
+    "mainImage": "/assets/spaces/wayco3.jpeg",
+    "amenities": [
+      "WiFi premium",
+      "Servicio de conserjería",
+      "Salas de reuniones premium",
+      "Terraza con vistas",
+      "Servicio de catering",
+      "Domiciliación fiscal",
+      "Parking concertado"
+    ],
+    "pricing": {
+      "dayPass": 35,
+      "weekPass": 140,
+      "monthlyHotDesk": 250,
+      "monthlyFixedDesk": 350,
+      "privateOffice": 600
+    },
+    "openingHours": {
+      "monday": "07:00-22:00",
+      "tuesday": "07:00-22:00",
+      "wednesday": "07:00-22:00",
+      "thursday": "07:00-22:00",
+      "friday": "07:00-22:00",
+      "saturday": "08:00-20:00",
+      "sunday": "09:00-19:00"
+    },
+    "capacity": 180,
+    "rating": 4.8,
+    "reviews": 156,
+    "tags": ["premium", "lujo", "granvia", "ejecutivo"],
+    "featured": true
+  },
+  {
+    "id": 9,
+    "name": "22@Network Barcelona",
+    "slug": "22network-barcelona",
+    "description": "Ubicado en el distrito tecnológico 22@ de Barcelona, es el lugar perfecto para empresas tech y startups que buscan estar en el epicentro de la innovación barcelonesa.",
+    "shortDescription": "Coworking tech en el distrito 22@ de Barcelona",
+    "address": "Carrer de Pujades, 100, Barcelona",
+    "city": "Barcelona",
+    "postalCode": "08005",
+    "coordinates": {
+      "lat": 41.4036,
+      "lng": 2.1962
+    },
+    "phone": "+34 933 456 789",
+    "email": "info@22network.es",
+    "website": "https://22network.es",
+    "images": [
+      "/assets/spaces/wayco4.jpeg"
+    ],
+    "mainImage": "/assets/spaces/wayco4.jpeg",
+    "amenities": [
+      "Internet 1GB simétrico",
+      "Laboratorio de IoT",
+      "Sala de videoconferencias 4K",
+      "Zona de networking",
+      "Cocina gourmet",
+      "Terraza con vistas al mar",
+      "Parking para bicicletas",
+      "Duchas"
+    ],
+    "pricing": {
+      "dayPass": 32,
+      "weekPass": 125,
+      "monthlyHotDesk": 220,
+      "monthlyFixedDesk": 320,
+      "privateOffice": 550
+    },
+    "openingHours": {
+      "monday": "07:30-21:30",
+      "tuesday": "07:30-21:30",
+      "wednesday": "07:30-21:30",
+      "thursday": "07:30-21:30",
+      "friday": "07:30-21:30",
+      "saturday": "09:00-19:00",
+      "sunday": "10:00-18:00"
+    },
+    "capacity": 140,
+    "rating": 4.6,
+    "reviews": 93,
+    "tags": ["tecnologia", "22@", "startups", "innovacion"],
+    "featured": false
+  },
+  {
+    "id": 10,
+    "name": "Betahaus Barcelona",
+    "slug": "betahaus-barcelona",
+    "description": "Comunidad internacional de emprendedores y creativos en el barrio de Gràcia. Espacio colaborativo que fomenta la creatividad y el intercambio cultural.",
+    "shortDescription": "Comunidad creativa internacional en Gràcia",
+    "address": "Carrer de Gràcia, 95, Barcelona",
+    "city": "Barcelona",
+    "postalCode": "08008",
+    "coordinates": {
+      "lat": 41.3970,
+      "lng": 2.1580
+    },
+    "phone": "+34 936 789 012",
+    "email": "barcelona@betahaus.com",
+    "website": "https://barcelona.betahaus.com",
+    "images": [
+      "/assets/spaces/vortex.jpeg"
+    ],
+    "mainImage": "/assets/spaces/vortex.jpeg",
+    "amenities": [
+      "WiFi de alta velocidad",
+      "Eventos semanales",
+      "Biblioteca creativa",
+      "Zona de relajación",
+      "Cocina compartida",
+      "Terraza exterior",
+      "Workshop space"
+    ],
+    "pricing": {
+      "dayPass": 24,
+      "weekPass": 95,
+      "monthlyHotDesk": 170,
+      "monthlyFixedDesk": 240,
+      "privateOffice": 420
+    },
+    "openingHours": {
+      "monday": "09:00-20:00",
+      "tuesday": "09:00-20:00",
+      "wednesday": "09:00-20:00",
+      "thursday": "09:00-20:00",
+      "friday": "09:00-20:00",
+      "saturday": "10:00-18:00",
+      "sunday": "Cerrado"
+    },
+    "capacity": 80,
+    "rating": 4.4,
+    "reviews": 67,
+    "tags": ["creativo", "internacional", "gracia", "comunidad"],
+    "featured": false
+  },
+  {
+    "id": 11,
+    "name": "Seville Quarter",
+    "slug": "seville-quarter",
+    "description": "Coworking boutique en el casco histórico de Sevilla. Un oasis de productividad en un edificio rehabilitado que combina la arquitectura tradicional andaluza con tecnología moderna.",
+    "shortDescription": "Coworking boutique en el casco histórico de Sevilla",
+    "address": "Calle Sierpes, 45, Sevilla",
+    "city": "Sevilla",
+    "postalCode": "41004",
+    "coordinates": {
+      "lat": 37.3886,
+      "lng": -5.9923
+    },
+    "phone": "+34 954 123 456",
+    "email": "info@sevillequarter.es",
+    "website": "https://sevillequarter.es",
+    "images": [
+      "/assets/spaces/garagecow.jpeg"
+    ],
+    "mainImage": "/assets/spaces/garagecow.jpeg",
+    "amenities": [
+      "WiFi fibra óptica",
+      "Patio andaluz",
+      "Aire acondicionado",
+      "Salas de reuniones",
+      "Biblioteca",
+      "Servicio de té y café",
+      "Zona de descanso"
+    ],
+    "pricing": {
+      "dayPass": 20,
+      "weekPass": 80,
+      "monthlyHotDesk": 140,
+      "monthlyFixedDesk": 200,
+      "privateOffice": 360
+    },
+    "openingHours": {
+      "monday": "08:30-19:30",
+      "tuesday": "08:30-19:30",
+      "wednesday": "08:30-19:30",
+      "thursday": "08:30-19:30",
+      "friday": "08:30-19:30",
+      "saturday": "09:00-15:00",
+      "sunday": "Cerrado"
+    },
+    "capacity": 50,
+    "rating": 4.5,
+    "reviews": 39,
+    "tags": ["boutique", "historico", "andaluz", "tradicional"],
+    "featured": false
+  },
+  {
+    "id": 12,
+    "name": "Bilbao Cowork",
+    "slug": "bilbao-cowork",
+    "description": "Espacio de coworking moderno en el renovado distrito de Abandonoibarra, cerca del Guggenheim. Perfecto para profesionales y empresas que buscan un entorno inspirador en Bilbao.",
+    "shortDescription": "Coworking moderno cerca del Guggenheim",
+    "address": "Avenida Abandoibarra, 12, Bilbao",
+    "city": "Bilbao",
+    "postalCode": "48009",
+    "coordinates": {
+      "lat": 43.2669,
+      "lng": -2.9341
+    },
+    "phone": "+34 944 567 890",
+    "email": "info@bilbaocowork.es",
+    "website": "https://bilbaocowork.es",
+    "images": [
+      "/assets/spaces/espaiborn.jpeg"
+    ],
+    "mainImage": "/assets/spaces/espaiborn.jpeg",
+    "amenities": [
+      "WiFi de alta velocidad",
+      "Vistas a la ría",
+      "Salas de reuniones",
+      "Zona de café",
+      "Parking cercano",
+      "Transporte público",
+      "Aire acondicionado"
+    ],
+    "pricing": {
+      "dayPass": 26,
+      "weekPass": 105,
+      "monthlyHotDesk": 185,
+      "monthlyFixedDesk": 260,
+      "privateOffice": 450
+    },
+    "openingHours": {
+      "monday": "08:00-20:00",
+      "tuesday": "08:00-20:00",
+      "wednesday": "08:00-20:00",
+      "thursday": "08:00-20:00",
+      "friday": "08:00-20:00",
+      "saturday": "09:00-17:00",
+      "sunday": "Cerrado"
+    },
+    "capacity": 90,
+    "rating": 4.6,
+    "reviews": 52,
+    "tags": ["moderno", "guggenheim", "vistas", "cultura"],
+    "featured": false
   }
 ]

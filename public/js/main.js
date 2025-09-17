@@ -31,10 +31,140 @@ async function initializeApp() {
     try {
         await loadCities();
         await loadFeaturedCoworkings();
+        await loadQuickStats();
+        await createCityFilterPills();
         setupEventListeners();
     } catch (error) {
         console.error('Error inicializando la aplicación:', error);
         showError('Error cargando la aplicación');
+    }
+}
+
+// Cargar estadísticas rápidas
+async function loadQuickStats() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/coworkings`);
+        const data = await response.json();
+        
+        if (data.success && data.data) {
+            const coworkings = data.data;
+            const cities = [...new Set(coworkings.map(c => c.city))];
+            const avgPrice = Math.round(coworkings.reduce((sum, c) => sum + c.pricing.day, 0) / coworkings.length);
+            
+            displayQuickStats({
+                totalSpaces: coworkings.length,
+                cities: cities.length,
+                avgPrice: avgPrice,
+                featured: coworkings.filter(c => c.featured).length
+            });
+        }
+    } catch (error) {
+        console.error('Error cargando estadísticas:', error);
+    }
+}
+
+// Mostrar estadísticas rápidas
+function displayQuickStats(stats) {
+    const statsContainer = document.createElement('div');
+    statsContainer.className = 'quick-stats';
+    statsContainer.innerHTML = `
+        <div class="stat-item">
+            <span class="stat-number">${stats.totalSpaces}</span>
+            <span class="stat-label">Espacios</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">${stats.cities}</span>
+            <span class="stat-label">Ciudades</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">${stats.avgPrice}€</span>
+            <span class="stat-label">Precio medio/día</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">${stats.featured}</span>
+            <span class="stat-label">Destacados</span>
+        </div>
+    `;
+    
+    // Insertar después del hero
+    const hero = document.querySelector('.hero');
+    if (hero && hero.nextSibling) {
+        hero.parentNode.insertBefore(statsContainer, hero.nextSibling);
+    }
+}
+
+// Crear filtros de ciudad como pills
+async function createCityFilterPills() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/cities`);
+        const data = await response.json();
+        
+        if (data.success) {
+            const pillsContainer = document.createElement('div');
+            pillsContainer.className = 'city-filter-pills';
+            
+            // Pill para "Todas"
+            const allPill = document.createElement('button');
+            allPill.className = 'city-pill active';
+            allPill.textContent = 'Todas';
+            allPill.onclick = () => filterByCity('', allPill);
+            pillsContainer.appendChild(allPill);
+            
+            // Pills para cada ciudad
+            data.data.forEach(city => {
+                const pill = document.createElement('button');
+                pill.className = 'city-pill';
+                pill.textContent = city;
+                pill.onclick = () => filterByCity(city, pill);
+                pillsContainer.appendChild(pill);
+            });
+            
+            // Insertar antes de los filtros existentes
+            const filtersBar = document.querySelector('.filters-bar');
+            if (filtersBar) {
+                filtersBar.parentNode.insertBefore(pillsContainer, filtersBar);
+            }
+        }
+    } catch (error) {
+        console.error('Error creando filtros de ciudad:', error);
+    }
+}
+
+// Filtrar por ciudad usando pills
+function filterByCity(city, clickedPill) {
+    // Actualizar estado visual de pills
+    document.querySelectorAll('.city-pill').forEach(pill => {
+        pill.classList.remove('active');
+    });
+    clickedPill.classList.add('active');
+    
+    // Actualizar filtro y buscar
+    currentFilters.city = city;
+    cityFilter.value = city; // Sincronizar con select tradicional
+    
+    if (currentFilters.search || city) {
+        performSearch();
+    } else {
+        // Si no hay búsqueda, mostrar todos los coworkings
+        loadAllCoworkings();
+    }
+}
+
+// Cargar todos los coworkings (sin filtros)
+async function loadAllCoworkings() {
+    try {
+        showLoading(true);
+        const response = await fetch(`${API_BASE_URL}/coworkings`);
+        const data = await response.json();
+        
+        if (data.success) {
+            renderSearchResults(data);
+        }
+    } catch (error) {
+        console.error('Error cargando coworkings:', error);
+        showError('Error cargando los espacios');
+    } finally {
+        showLoading(false);
     }
 }
 

@@ -12,6 +12,7 @@ describe('Coworkings API', () => {
       expect(response.body.success).toBe(true);
       expect(Array.isArray(response.body.data)).toBe(true);
       expect(response.body.data.length).toBeGreaterThan(0);
+      expect(response.body.data.length).toBe(12); // Ahora tenemos 12 coworkings
       
       // Verificar estructura básica del primer coworking
       const firstCoworking = response.body.data[0];
