@@ -1,0 +1,7 @@
+# Archivos y directorios que Vercel debe ignorar
+Huby/
+node_modules/
+.git/
+*.log
+.env
+.DS_Store

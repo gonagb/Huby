@@ -130,7 +130,7 @@ header .login a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(60%); /* Para oscurecer un poco la imagen de fondo */
+    filter: brightness(60%);
 }
 
 .overlay {
@@ -158,7 +158,7 @@ header .login a:hover {
 
 .search-box input {
     padding: 10px 20px;
-    width: 70%;
+    width: 90%;
     border-radius: 30px;
     border: none;
     font-size: 18px;
@@ -183,7 +183,7 @@ header .login a:hover {
 }
 
 .search-box button:hover {
-    background-color: var(--neutral-400); /* Efecto hover para el botón */
+    background-color: var(--neutral-400); 
 }
 
 .search-box button i {
@@ -194,7 +194,7 @@ header .login a:hover {
     color: var(--neutral-100);
 }
 
-/* Maps Iframe*/
+/* Maps iFrame*/
 
 .maps-iframe{
     position: absolute;

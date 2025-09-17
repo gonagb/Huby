@@ -1,0 +1,263 @@
+[
+  {
+    "id": 1,
+    "name": "Wayco Valencia",
+    "slug": "wayco-valencia",
+    "description": "Espacio de coworking moderno y vibrante en el corazón de Valencia. Con más de 1000m² de oficinas privadas, puestos fijos, salas de reuniones y espacios de networking.",
+    "shortDescription": "Coworking moderno en el centro de Valencia",
+    "address": "Calle Gran Vía Marqués del Turia, 49, Valencia",
+    "city": "Valencia",
+    "postalCode": "46005",
+    "coordinates": {
+      "lat": 39.4699,
+      "lng": -0.3763
+    },
+    "phone": "+34 963 123 456",
+    "email": "valencia@wayco.co",
+    "website": "https://wayco.co/valencia",
+    "images": [
+      "/assets/spaces/wayco.jpeg",
+      "/assets/spaces/wayco1.jpeg",
+      "/assets/spaces/wayco2.jpeg",
+      "/assets/spaces/wayco3.jpeg",
+      "/assets/spaces/wayco4.jpeg"
+    ],
+    "mainImage": "/assets/spaces/waycomain.jpeg",
+    "amenities": [
+      "WiFi de alta velocidad",
+      "Café y té gratis",
+      "Salas de reuniones",
+      "Impresora/Scanner",
+      "Aire acondicionado",
+      "Parking disponible",
+      "Terraza",
+      "Eventos de networking"
+    ],
+    "pricing": {
+      "dayPass": 25,
+      "weekPass": 100,
+      "monthlyHotDesk": 180,
+      "monthlyFixedDesk": 250,
+      "privateOffice": 450
+    },
+    "openingHours": {
+      "monday": "08:00-20:00",
+      "tuesday": "08:00-20:00",
+      "wednesday": "08:00-20:00",
+      "thursday": "08:00-20:00",
+      "friday": "08:00-20:00",
+      "saturday": "09:00-18:00",
+      "sunday": "Cerrado"
+    },
+    "capacity": 120,
+    "rating": 4.8,
+    "reviews": 89,
+    "tags": ["moderno", "centro", "networking", "eventos"],
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Espai Born",
+    "slug": "espai-born",
+    "description": "Un espacio único en el barrio del Born valenciano, perfecto para freelancers y pequeñas empresas. Ambiente creativo y colaborativo con todas las comodidades necesarias.",
+    "shortDescription": "Espacio creativo en el barrio del Born",
+    "address": "Calle Poeta Querol, 15, Valencia",
+    "city": "Valencia",
+    "postalCode": "46002",
+    "coordinates": {
+      "lat": 39.4756,
+      "lng": -0.3724
+    },
+    "phone": "+34 963 789 012",
+    "email": "hola@espaiborn.com",
+    "website": "https://espaiborn.com",
+    "images": [
+      "/assets/spaces/espaiborn.jpeg"
+    ],
+    "mainImage": "/assets/spaces/espaiborn.jpeg",
+    "amenities": [
+      "WiFi fibra óptica",
+      "Zona de descanso",
+      "Cocina equipada",
+      "Salas de reuniones",
+      "Proyector",
+      "Biblioteca",
+      "Zona de llamadas"
+    ],
+    "pricing": {
+      "dayPass": 20,
+      "weekPass": 85,
+      "monthlyHotDesk": 150,
+      "monthlyFixedDesk": 220,
+      "privateOffice": 380
+    },
+    "openingHours": {
+      "monday": "08:30-19:30",
+      "tuesday": "08:30-19:30",
+      "wednesday": "08:30-19:30",
+      "thursday": "08:30-19:30",
+      "friday": "08:30-19:30",
+      "saturday": "10:00-16:00",
+      "sunday": "Cerrado"
+    },
+    "capacity": 45,
+    "rating": 4.6,
+    "reviews": 34,
+    "tags": ["creativo", "born", "freelancers", "acogedor"],
+    "featured": false
+  },
+  {
+    "id": 3,
+    "name": "Garage Coworking",
+    "slug": "garage-coworking",
+    "description": "Espacio industrial reconvertido en coworking. Techos altos, espacios abiertos y un ambiente dinámico perfecto para startups y emprendedores tecnológicos.",
+    "shortDescription": "Coworking industrial para startups tech",
+    "address": "Avenida de França, 20, Valencia",
+    "city": "Valencia",
+    "postalCode": "46023",
+    "coordinates": {
+      "lat": 39.4668,
+      "lng": -0.3518
+    },
+    "phone": "+34 963 345 678",
+    "email": "info@garagecoworking.es",
+    "website": "https://garagecoworking.es",
+    "images": [
+      "/assets/spaces/garagecow.jpeg"
+    ],
+    "mainImage": "/assets/spaces/garagecow.jpeg",
+    "amenities": [
+      "Internet 1GB",
+      "Salas de videoconferencia",
+      "Laboratorio maker",
+      "Zona gaming",
+      "Impresora 3D",
+      "Parking gratuito",
+      "Cafetería",
+      "Sala de eventos"
+    ],
+    "pricing": {
+      "dayPass": 22,
+      "weekPass": 95,
+      "monthlyHotDesk": 165,
+      "monthlyFixedDesk": 240,
+      "privateOffice": 420
+    },
+    "openingHours": {
+      "monday": "07:00-21:00",
+      "tuesday": "07:00-21:00",
+      "wednesday": "07:00-21:00",
+      "thursday": "07:00-21:00",
+      "friday": "07:00-21:00",
+      "saturday": "09:00-19:00",
+      "sunday": "10:00-18:00"
+    },
+    "capacity": 85,
+    "rating": 4.7,
+    "reviews": 67,
+    "tags": ["tech", "startups", "maker", "innovacion"],
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "Vortex Coworking",
+    "slug": "vortex-coworking",
+    "description": "Espacio profesional con diseño contemporáneo ubicado en zona empresarial. Ideal para empresas en crecimiento y profesionales que buscan un ambiente serio y productivo.",
+    "shortDescription": "Coworking profesional zona empresarial",
+    "address": "Calle de la Paz, 42, Valencia",
+    "city": "Valencia",
+    "postalCode": "46003",
+    "coordinates": {
+      "lat": 39.4699,
+      "lng": -0.3767
+    },
+    "phone": "+34 963 456 789",
+    "email": "contacto@vortexcoworking.com",
+    "website": "https://vortexcoworking.com",
+    "images": [
+      "/assets/spaces/vortex.jpeg"
+    ],
+    "mainImage": "/assets/spaces/vortex.jpeg",
+    "amenities": [
+      "Conexión premium",
+      "Servicio de limpieza",
+      "Recepción",
+      "Domiciliación empresarial",
+      "Salas ejecutivas",
+      "Servicio de café premium",
+      "Parking privado"
+    ],
+    "pricing": {
+      "dayPass": 30,
+      "weekPass": 120,
+      "monthlyHotDesk": 200,
+      "monthlyFixedDesk": 280,
+      "privateOffice": 500
+    },
+    "openingHours": {
+      "monday": "07:30-20:30",
+      "tuesday": "07:30-20:30",
+      "wednesday": "07:30-20:30",
+      "thursday": "07:30-20:30",
+      "friday": "07:30-20:30",
+      "saturday": "09:00-17:00",
+      "sunday": "Cerrado"
+    },
+    "capacity": 60,
+    "rating": 4.9,
+    "reviews": 45,
+    "tags": ["profesional", "ejecutivo", "empresas", "premium"],
+    "featured": true
+  },
+  {
+    "id": 5,
+    "name": "Coworking Valencia Centro",
+    "slug": "coworking-valencia-centro",
+    "description": "Espacio acogedor en pleno centro histórico de Valencia. Perfecto para nómadas digitales y freelancers que buscan un ambiente relajado pero productivo.",
+    "shortDescription": "Acogedor coworking en el centro histórico",
+    "address": "Plaza de la Reina, 8, Valencia",
+    "city": "Valencia",
+    "postalCode": "46003",
+    "coordinates": {
+      "lat": 39.4753,
+      "lng": -0.3774
+    },
+    "phone": "+34 963 567 890",
+    "email": "hola@coworkingvalencia.es",
+    "website": "https://coworkingvalencia.es",
+    "images": [
+      "/assets/spaces/coworkingvalencia.jpg"
+    ],
+    "mainImage": "/assets/spaces/coworkingvalencia.jpg",
+    "amenities": [
+      "WiFi gratuito",
+      "Terraza exterior",
+      "Cocina compartida",
+      "Zona de descanso",
+      "Biblioteca",
+      "Salas de reuniones",
+      "Armarios con llave"
+    ],
+    "pricing": {
+      "dayPass": 18,
+      "weekPass": 75,
+      "monthlyHotDesk": 135,
+      "monthlyFixedDesk": 195,
+      "privateOffice": 350
+    },
+    "openingHours": {
+      "monday": "08:00-20:00",
+      "tuesday": "08:00-20:00",
+      "wednesday": "08:00-20:00",
+      "thursday": "08:00-20:00",
+      "friday": "08:00-20:00",
+      "saturday": "09:00-15:00",
+      "sunday": "Cerrado"
+    },
+    "capacity": 35,
+    "rating": 4.4,
+    "reviews": 28,
+    "tags": ["centro", "historico", "nomadas", "acogedor"],
+    "featured": false
+  }
+]
